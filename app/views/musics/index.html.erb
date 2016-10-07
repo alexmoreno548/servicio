@@ -1,0 +1,27 @@
+<div class="row">
+  <% @musics.each do |music| %>
+    <div class="col-xs-4 col-md-4 cardW ">
+      <div class="card card-block cardMusic">
+      <div class="text-xs-center">
+        <%= link_to music do%>
+        <%= image_tag music.image.url(:medium), :class => "card-img-top img-thumbnail", :alt => "Card image cap" %>
+        <% end %>
+      </div>
+      <div class="cardText">        
+          <p class="card-title "><strong><%= music.name %></strong></p>
+          <p class="card-text"><%= music.artist %></p>
+          <p class="card-text"><%= music.points %></p>
+
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p><%= link_to 'Show', music %></p>
+          <p><%= link_to 'Edit', edit_music_path(music) %></p>
+          <p><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Music', new_music_path %>

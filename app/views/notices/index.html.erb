@@ -1,0 +1,18 @@
+<div class="container ">
+
+    <tbody>
+      <% @notices.each do |notice| %>
+        
+          <h2><%= notice.title %></h2>
+          <%= image_tag notice.image.url (:large) %>
+          <p><%= notice.body.html_safe %></p>
+          <td><%= link_to 'Show', notice %></td>
+          <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+          <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <hr>
+        
+      <% end %>
+
+  <br>
+<%= link_to 'New Notice', new_notice_path %>
+</div>

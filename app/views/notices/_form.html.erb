@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-2">
+   
+      <%= form_for(notice, :html=>{:multipart=>true})  do |f| %>
+        <% if notice.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+            <ul>
+            <% notice.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label "Agregar Titulo" %>
+          <%= f.text_field :title, :class => 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Agregar imagen" %>
+          <%= f.file_field :image, :class => 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Agregar contenido" %>
+          <%= f.text_area :body, :class => 'ckeditor'%>
+        </div>
+        <br/
+        <div class="actions">
+          <%= f.submit "Guardar", :class => 'btn btn-default'  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

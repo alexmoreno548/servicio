@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<div class="col-md-12 col-sm-12">
+		<% url = @music.url %>
+		<iframe  class="embed-responsive-item videoBlock" src="<%="http://www.youtube.com/embed/"+url.split("=").last%>" controls="true"></iframe>
+	</div>
+</div>
+<div class="row" style=" margin-top: 25px;">
+	<div class="col-md-8">
+		<p>Tema: <strong><%= @music.name %></strong></p>
+		<p>Artista: <strong><%= @music.artist %></strong></p>
+		<p><strong>Points:</strong><%= @music.points %></p>
+
+		<%= link_to 'Edit', edit_music_path(@music) %> |
+		<%= link_to 'Back', musics_path %>
+	</div>
+	<div class="col-md-4 imgVideoShow">
+		<%= image_tag @music.image.url(:medium) %>
+	</div>
+
+</div>
+
+
+

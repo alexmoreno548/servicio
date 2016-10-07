@@ -1,0 +1,31 @@
+  <% @programs.each do |program| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-block">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-block">
+              <h4 class="card-title"><%= program.name %></h4>
+              <p class="card-text"><%= program.schedule %></p>
+              <%= link_to program do%>
+                <button class="btn btn-primary">Ver mas</button>
+               <% end %>
+              <td><%= link_to 'Edit', edit_program_path(program) %></td>
+              <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <%= link_to program do%>
+              <%= image_tag program.image.url(:medium), :class => "card-img-top imgCardProgram", :alt => "Card image cap" %>
+              <% end %>
+          </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Misionera Stereo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'servicio', media: 'all'  %>
+    <%= stylesheet_link_tag    'styleIndex', media: 'all'  %>
+    <%= stylesheet_link_tag    'top', media: 'all'  %>
+    <%= stylesheet_link_tag    'styleApp', media: 'all'  %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="container-fluid">
+      <%= image_tag "images", :class => "marginLogo imgLogo" %>
+      <nav>
+        <a href="/notices" class="navbar-brand">Noticias</a></li>
+        <a href="/musics" class="navbar-brand">Música</a></li>
+        <a href="/programs" class="navbar-brand">Programación</a></li>
+        <a href="#" class="navbar-brand">Nosotros</a></li>
+        <a href="/sponsors" class="navbar-brand">Sponsors</a></li>
+
+      </nav>
+    </header>
+
+
+    <div class="container">
+      <div class="row">
+          <aside class="col-md-3 hidden-xs hidden-sm ">
+            <div class="row">
+             <div class="list-group">
+               <div>
+                  <h4>
+                    <span><strong>Top 5</strong></span>
+                    <i class="fa fa-star" id="top5"></i>
+                    <i class="fa fa-star" id="top5"></i>
+                    <i class="fa fa-star" id="top5"></i>
+                    <i class="fa fa-star" id="top5"></i>
+                    <i class="fa fa-star" id="top5"></i>
+                  </h4>
+               </div>
+                <a href="#" class="list-group-item list-group-item-action wColTop">
+                <h4 class="list-group-item-heading">Make A Move</h4>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <img src="https://i.ytimg.com/vi/vgkzlu-FaMU/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=FtrTGRoeFfrxj8FVwKghG2JLZw4" class="img-thumbnail" >
+                    </div>
+                  <p class="list-group-text">Royal taylor</strong></p>
+                </a>
+
+                
+            </div>
+         </div>
+          </aside>  
+
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      
+        
+      </div>
+    
+    
+    </div>
+
+  </body>
+</html>

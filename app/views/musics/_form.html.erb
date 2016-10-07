@@ -1,0 +1,41 @@
+<%= form_for(music, :html=>{:multipart=>true}) do |f| %>
+  <% if music.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(music.errors.count, "error") %> prohibited this music from being saved:</h2>
+
+      <ul>
+      <% music.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <p>Imagen</p>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :points %>
+    <%= f.number_field :points %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
