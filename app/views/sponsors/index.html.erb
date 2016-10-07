@@ -1,31 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Sponsors</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sponsors.each do |sponsor| %>
-      <tr>
-        <td><%= sponsor.name %></td>
-        <td><%= sponsor.description %></td>
-        <td><%= sponsor.address %></td>
-        <td><%= link_to 'Show', sponsor %></td>
+<div class="row">
+  
+  <% @sponsors.each do |sponsor| %>
+    <div class="col-md-4">
+      <div class="card alinCenter">
+        <%= link_to sponsor do%>
+          <%= image_tag sponsor.image.url(:medium), :class => "card-img-top imgSponsor", :alt => "Card image cap" %>
+        <% end %>
+        <div class="card-block">
+          <h3 class="card-text"><%= sponsor.name %></h3>
+        </div>
         <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
         <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+    
+  <% end %>
+</div>
 
+
+    
 <br>
 
 <%= link_to 'New Sponsor', new_sponsor_path %>

@@ -1,4 +1,4 @@
-<%= form_for(sponsor) do |f| %>
+<%= form_for(sponsor, :html=>{:multipart=>true}) do |f| %>
   <% if sponsor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <p>Logo</p>
+    <%= f.file_field :image %>
+  </div>
 
   <div class="field">
     <%= f.label :name %>

@@ -1,19 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @sponsor.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @sponsor.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @sponsor.address %>
-</p>
+<h1><%= @sponsor.name %></h1>
+<div class="alinCenter">
+	<%= image_tag @sponsor.image.url(:medium), :class => "" %>
+</div>
+<p><%= @sponsor.description %></p>
+<p><strong>Direccion:</strong></p>
+<p><%= @sponsor.address %></p>
 
 <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
 <%= link_to 'Back', sponsors_path %>
