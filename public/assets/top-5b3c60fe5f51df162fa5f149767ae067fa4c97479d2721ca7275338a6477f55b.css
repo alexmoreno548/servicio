@@ -1,0 +1,53 @@
+@media screen and (min-width:1270px) {
+ .thumbnail{
+   float: left;
+   width: 30%;
+ }
+}
+
+@media screen and (min-width:1135px) and (max-width:1269px) {
+  .thumbnail{
+    float: left;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width:992px) and (max-width:1134px) {
+  .thumbnail{
+    float: left;
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:850px) and (max-width:991px) {
+  .thumbnail{
+    float: left;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width:560px) and (max-width:849px) {
+  .thumbnail{
+    float: left;
+    width: 46%;
+  }
+}
+
+.imgW
+{
+  width: 200px;
+}
+
+.wColTop
+{
+  width: 88%;
+}
+
+#top5{
+  color: blue;
+  margin-bottom: 1em;
+}
+
+#pright{
+  margin-right: 1em;
+}
