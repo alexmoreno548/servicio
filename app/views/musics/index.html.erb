@@ -1,21 +1,28 @@
 <div class="row">
   <% @musics.each do |music| %>
     <div class="col-xs-4 col-md-4 cardW ">
-      <div class="card card-block cardMusic">
+    <% if admin_signed_in? %>
+      <div class="card card-block cardMusicEdit">
+    <% else %>
+       <div class="card card-block cardMusic">
+    <% end %>
       <div class="text-xs-center">
         <%= link_to music do%>
         <%= image_tag music.image.url(:medium), :class => "card-img-top img-thumbnail", :alt => "Card image cap" %>
         <% end %>
       </div>
       <div class="cardText">        
-          <p class="card-title "><strong><%= music.name %></strong></p>
-          <p class="card-text"><%= music.artist %></p>
-          <p class="card-text"><%= music.points %></p>
-
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-          <p><%= link_to 'Show', music %></p>
-          <p><%= link_to 'Edit', edit_music_path(music) %></p>
-          <p><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p class="card-title "><strong><%= music.name %></strong></p>
+        <p class="card-text"><%= music.artist %></p>
+        <div class="alinCenter marginTop">
+          <%= link_to 'Ver', music, :class => 'btn btn-primary' %>
+        </div>
+        <% if admin_signed_in? %>
+          <div class="alinCenter marginTop">
+            <%= link_to 'Editar', edit_music_path(music) , :class => 'btn btn-success'%>
+            <%= link_to 'Destruir', music, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-danger'%>
+          </div>
+        <% end %>
       </div>
       </div>
     </div>
@@ -23,5 +30,10 @@
 </div>
 
 <br>
-
-<%= link_to 'New Music', new_music_path %>
+<div class="alinCenter"> 
+  
+  <%= will_paginate @notices, :page_links => false %>
+</div>
+<% if admin_signed_in? %>
+  <%= link_to 'Agregar Nuevo', new_music_path , :class => 'btn btn-primary'%>
+<% end %>

@@ -11,27 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <p>Logo</p>
-    <%= f.file_field :image %>
+  <div >
+    <p><strong>Logo:</strong></p>
+    <%= f.file_field :image, :class => 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="marginTop">
+    <p><strong>Nombre de Empresa o Negocio:</strong></p>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="marginTop">
+    <p><strong>Descripcion de la Empresa o negocio:</strong></p>
+    <%= f.cktext_area :description, :rows => '10' %>
   </div>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <div class="marginTop">
+    <p><strong>Ubicacion:</strong></p>
+    <%= f.text_field :address, :class => 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="marginTop">
+    <p><strong>Fotos:</strong></p>
+    <%= f.file_field :photos, multiple: true %>
+  </div>
+
+
+
+  <div class="marginTop">
+    <%= f.submit 'Guardar', :class => 'btn btn-primary'%>
   </div>
 <% end %>

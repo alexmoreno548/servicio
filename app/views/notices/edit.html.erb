@@ -1,9 +1,10 @@
-
-<h1>Editing Notice</h1>
-
+<h1>Edicion de Noticias</h1>
+<p style="color: red;"><strong>Atencion:</strong> Si el editor en el area de "Agregar contenido:" no se carga, favor recargar la
+pagina con f5</p>
 
 <%= render 'form', notice: @notice %>
 
-<%= link_to 'Show', @notice %> |
-<%= link_to 'Back', notices_path %>
+<div class=" marginLeft">
+	<%= link_to 'Atras', notices_path, :class => 'btn btn-primary marginTop' %>
+</div>
 

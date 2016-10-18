@@ -1,6 +1,9 @@
-<h1>Editing Sponsor</h1>
+<h1>Edicion de Patrocinantes</h1>
+<p style="color: red;"><strong>Atencion:</strong> Si el editor en el area de "Descripcion de la Empresa o Negocio:" no se carga, favor recargar la
+pagina con f5</p>
 
 <%= render 'form', sponsor: @sponsor %>
 
-<%= link_to 'Show', @sponsor %> |
-<%= link_to 'Back', sponsors_path %>
+<div class="marginTop">
+	<%= link_to 'Atras', sponsors_path, :class => 'btn btn-primary' %>
+</div>

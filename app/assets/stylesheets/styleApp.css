@@ -14,10 +14,26 @@
 	margin-top: 1em;
 }
 
+.cardSponsor
+{
+	height: 18.5em;
+}
+
+.cardSponsorEdit
+{
+	height: 22em;
+}
+
 .cardMusic
 {
 	width: 16em;
-	height: 26em;
+	height: 18em;
+}
+
+.cardMusicEdit
+{
+	width: 16em;
+	height: 21em;
 }
 
 .imgCardProgram
@@ -56,4 +72,54 @@
 {
 	height: 11em;
     width: 14.5em;
+}
+
+#logoAbout
+{
+	height: 28em;
+    width: 32em;
+	margin-bottom: 7em;
+}
+
+#titleNoneDeco
+{
+	text-decoration: none;
+    color: #000;
+}
+
+.footerCustom
+{
+    background-color: #D5D5D5;
+    height: 12em;
+    margin-top: 5em;
+}
+
+.logoFooter
+{
+	height: 4em;
+}
+
+.marginTop
+{
+	margin-top: 1em;
+}
+
+.marginLeft
+{
+	margin-left: 18.8em;
+}
+
+.footerColor
+{
+	background-color: #D5D5D5;
+}
+
+.black
+{
+	color: black;
+}
+
+.margin
+{
+	margin: 1em;
 }

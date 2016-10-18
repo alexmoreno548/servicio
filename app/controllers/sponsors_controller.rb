@@ -1,6 +1,7 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
 
+
   # GET /sponsors
   # GET /sponsors.json
   def index
@@ -69,6 +70,6 @@ class SponsorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sponsor_params
-      params.require(:sponsor).permit(:name, :description, :address, :image)
+      params.require(:sponsor).permit(:name, :description, :address, :image, {photos: []})
     end
 end

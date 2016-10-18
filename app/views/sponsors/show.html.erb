@@ -2,9 +2,20 @@
 <div class="alinCenter">
 	<%= image_tag @sponsor.image.url(:medium), :class => "" %>
 </div>
-<p><%= @sponsor.description %></p>
+<p><%= @sponsor.description.html_safe %></p>
+
 <p><strong>Direccion:</strong></p>
 <p><%= @sponsor.address %></p>
 
-<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
-<%= link_to 'Back', sponsors_path %>
+<div class="alinCenter">
+	<% @sponsor.photos_urls.each do |photo| %>
+		<%= image_tag photo %>
+		
+	<% end %>
+</div>
+
+<% if admin_signed_in? %>
+	<%= link_to 'Editar', edit_sponsor_path(@sponsor), :class => 'btn btn-success' %>
+<% end %>
+<a href="/sponsors" class="btn btn-primary fa fa-arrow-left"> Atras</a>
+

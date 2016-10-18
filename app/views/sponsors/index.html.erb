@@ -2,15 +2,26 @@
   
   <% @sponsors.each do |sponsor| %>
     <div class="col-md-4">
-      <div class="card alinCenter">
+    <% if admin_signed_in? %>
+      <div class="card alinCenter cardSponsorEdit">
+    <% else %>
+      <div class="card alinCenter cardSponsor">
+    <% end %>
         <%= link_to sponsor do%>
           <%= image_tag sponsor.image.url(:medium), :class => "card-img-top imgSponsor", :alt => "Card image cap" %>
         <% end %>
         <div class="card-block">
           <h3 class="card-text"><%= sponsor.name %></h3>
         </div>
-        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
-        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="alinCenter">
+          <%= link_to "Ver mas", sponsor, :class => 'btn btn-primary' %>
+        </div>
+        <% if admin_signed_in? %>
+          <div class="alinCenter marginTop">
+            <%= link_to 'Editar', edit_sponsor_path(sponsor), :class => 'btn btn-success' %>
+            <%= link_to 'Destruir', sponsor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+          </div>
+        <% end %>
       </div>
     </div>
     
@@ -21,4 +32,4 @@
     
 <br>
 
-<%= link_to 'New Sponsor', new_sponsor_path %>
+<%= link_to 'Nuevo Patrocinante', new_sponsor_path, :class => 'btn btn-primary'  %>

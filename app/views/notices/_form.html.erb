@@ -1,41 +1,34 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-9 col-md-offset-2">
-   
-      <%= form_for(notice, :html=>{:multipart=>true})  do |f| %>
-        <% if notice.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+<%= form_for(notice, :html=>{:multipart=>true})  do |f| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
 
-            <ul>
-            <% notice.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div class="field">
-          <%= f.label "Agregar Titulo" %>
-          <%= f.text_field :title, :class => 'form-control' %>
-        </div>
-
-        <div class="field">
-          <%= f.label "Agregar imagen" %>
-          <%= f.file_field :image, :class => 'form-control' %>
-        </div>
-
-        <div class="field">
-          <%= f.label "Agregar contenido" %>
-          <%= f.text_area :body, :class => 'ckeditor'%>
-        </div>
-        <br/
-        <div class="actions">
-          <%= f.submit "Guardar", :class => 'btn btn-default'  %>
-        </div>
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
+      </ul>
     </div>
+  <% end %>
+
+  <div class="field">
+    <p><strong>Agregar Titulo:</strong></p>
+    <%= f.text_field :title, :class => 'form-control' %>
   </div>
-</div>
+
+  <div class="field marginTop">
+    <p><strong>Agregar imagen</strong></p>
+    <%= f.file_field :image, :class => 'form-control' %>
+  </div>
+ 
+  <div class="field marginTop">
+    <p><strong>Agregar Contenido:</strong></p>
+    <%= f.cktext_area :body, :rows => '8'%>
+  </div>
+  <br/
+  <div class="actions">
+    <%= f.submit "Guardar", :class => 'btn btn-primary'  %>
+  </div>
+<% end %>
 
 

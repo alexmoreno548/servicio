@@ -1,6 +1,9 @@
-<h1>Editing Program</h1>
+<h1>Edicion de Programas</h1>
+<p style="color: red;"><strong>Atencion:</strong> Si el editor en el area de "Descipcion del Programa:" no se carga, favor recargar la
+pagina con f5</p>
 
 <%= render 'form', program: @program %>
 
-<%= link_to 'Show', @program %> |
-<%= link_to 'Back', programs_path %>
+<div class="marginTop ">
+	<%= link_to 'Atras', programs_path, :class => 'btn btn-primary'%>
+</div>

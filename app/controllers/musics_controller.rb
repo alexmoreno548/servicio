@@ -4,7 +4,7 @@ class MusicsController < ApplicationController
   # GET /musics
   # GET /musics.json
   def index
-    @musics = Music.all
+    @musics = Music.all.paginate(page: params[:page], per_page: 9)
   end
 
   # GET /musics/1
@@ -24,7 +24,10 @@ class MusicsController < ApplicationController
   # POST /musics
   # POST /musics.json
   def create
+    @vote = Vote.new
+    @vote.quantity = 0
     @music = Music.new(music_params)
+    @music.vote = @vote
     #url = @music.url
     #@music.url =  smallUrl(url)
 
@@ -57,6 +60,7 @@ class MusicsController < ApplicationController
   # DELETE /musics/1
   # DELETE /musics/1.json
   def destroy
+    @music.vote.destroy
     @music.destroy
     respond_to do |format|
       format.html { redirect_to musics_url, notice: 'Music was successfully destroyed.' }

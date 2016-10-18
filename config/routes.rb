@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
 
-  resources :sponsors
-  resources :programs
-  resources :musics
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :admins, controllers: {
+        sessions: 'admins/sessions',
+        registrations: 'admins/registrations',
+        passwords:  'admins/passwords'
+      }
   resources :notices
+  resources :musics
+  resources :programs
+  resources :sponsors
+  get '/about', to: 'about#index'
+  get '/votes/:id/edit', to: 'votes#edit'
+
   root 'notices#index'
 
 

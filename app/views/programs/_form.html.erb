@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <p><strong>Nombre del Programa:</strong></p>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
 
-  <div class="field">
-    <p>Logo</p>
-    <%= f.file_field :image %>
+  <div class="marginTop">
+    <p><strong>Logo:</strong></p>
+    <%= f.file_field :image, :class => 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="marginTop">
+    <p><strong>Descripcion del Programa:</strong></p>
+    <%= f.cktext_area :description, :rows => '10' %>
   </div>
 
-  <div class="field">
-    <%= f.label :schedule %>
-    <%= f.text_field :schedule %>
+  <div class="marginTop">
+    <p><strong>Horario del Programa:</strong></p>
+    <%= f.text_field :schedule, :class => 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="marginTop">
+    <%= f.submit 'Guardar', :class => 'btn btn-primary' %>
   </div>
 <% end %>

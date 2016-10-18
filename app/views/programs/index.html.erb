@@ -10,8 +10,10 @@
               <%= link_to program do%>
                 <button class="btn btn-primary">Ver mas</button>
                <% end %>
-              <td><%= link_to 'Edit', edit_program_path(program) %></td>
-              <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% if admin_signed_in? %>
+                <%= link_to 'Editar', edit_program_path(program), :class => 'btn btn-success' %>
+                <%= link_to 'Destruir', program, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+              <% end %>
             </div>
           </div>
           <div class="col-md-4">
@@ -26,6 +28,7 @@
 <% end %>
 
 <br>
-
-<%= link_to 'New Program', new_program_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'Nuevo Programa', new_program_path , :class => 'btn btn-primary' %>
+<% end %>
 

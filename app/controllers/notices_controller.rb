@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.all.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /notices/1

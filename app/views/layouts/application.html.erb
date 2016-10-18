@@ -16,53 +16,82 @@
     <header class="container-fluid">
       <%= image_tag "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/11222570_1035382626514392_4247210181183416816_n.jpg?oh=51c49120bdfd7d88373d98ba8408a7d3&oe=5864E20E", :class => "marginLogo imgLogo" %>
       <nav>
+        <% if admin_signed_in? %>
+          <%= link_to('Cerrar Sesion', destroy_admin_session_path, :method => :delete, :class => 'navbar-brand') %> 
+        <% end %>
         <a href="/notices" class="navbar-brand">Noticias</a></li>
         <a href="/musics" class="navbar-brand">Música</a></li>
         <a href="/programs" class="navbar-brand">Programación</a></li>
-        <a href="#" class="navbar-brand">Nosotros</a></li>
+        <a href="/about" class="navbar-brand">Nosotros</a></li>
         <a href="/sponsors" class="navbar-brand">Sponsors</a></li>
-
       </nav>
     </header>
-
-
     <div class="container">
       <div class="row">
           <aside class="col-md-3 hidden-xs hidden-sm ">
             <div class="row">
-             <div class="list-group">
-               <div>
+              <div class="list-group">
+                <div>
                   <h4>
                     <span><strong>Top 5</strong></span>
-                    <i class="fa fa-star" id="top5"></i>
-                    <i class="fa fa-star" id="top5"></i>
-                    <i class="fa fa-star" id="top5"></i>
-                    <i class="fa fa-star" id="top5"></i>
-                    <i class="fa fa-star" id="top5"></i>
+                    <i class="fa fa-thumbs-o-up" id="top5"></i>
                   </h4>
-               </div>
-                <a href="#" class="list-group-item list-group-item-action wColTop">
-                <h4 class="list-group-item-heading">Make A Move</h4>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <img src="https://i.ytimg.com/vi/vgkzlu-FaMU/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=FtrTGRoeFfrxj8FVwKghG2JLZw4" class="img-thumbnail" >
-                    </div>
-                  <p class="list-group-text">Royal taylor</strong></p>
-                </a>
+                </div>
 
-                
+                <% @top.each do |t| %>
+                  <a href="/musics/<%= t.id %>" class="list-group-item list-group-item-action wColTop">
+                  <p class="list-group-item-heading"><strong><%= t.name %></strong></p>
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <img src="<%= t.image %>" class="img-thumbnail" >
+                      </div>
+                    <p class="list-group-text"><%= t.artist %></strong></p>
+                  </a>
+                <% end %>
+
+
+              </div>
             </div>
-         </div>
           </aside>  
 
         <div class="col-md-9">
           <%= yield %>
         </div>
-      
-        
       </div>
-    
-    
     </div>
-
+    <!--<script type="text/javascript">
+      
+      alert("<%= notice %>");
+      alert("<%= alert %>");
+    </script>
+-->
+  <footer class="footerCustom">
+    <div class="footerColor">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-4 alinCenter">
+            <p>
+              <strong>Siguenos en las redes sociales:</strong>
+            </p>
+            <img src="http://www.getequal.org/uploads/4/6/4/4/46448283/3959912.png" alt="" class="logoFooter">
+            <img src="http://www.getequal.org/uploads/4/6/4/4/46448283/3935337.png" alt="" class="logoFooter">
+          </div>
+          <div class="col-md-4 ">
+            <p class="alinCenter"><strong>Conoce mas:</strong></p>
+            <a href="/about">Aserca de nosotros</a>
+            <p>llamanos: 0286-808-07-76</p>
+          </div>
+          <div class="col-md-4 ">
+            <p class="alinCenter"><strong>Promociona tu empresa:</strong></p>
+            <p>Contactanos y promocina tu empresa o negicio con nuestros paquetes de publicidad</p>
+            <p>telefono: 0286-808-07-76</p>
+          </div>
+          </div>
+        </div>
+        <div class="alinCenter scheduleProgramShow">
+            <p><i class="fa fa-copyright" aria-hidden="true"></i> Misionera Stereo 94.1 fm, <i>Bendiciendo a la familia </i><strong>|</strong> 2016</p>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

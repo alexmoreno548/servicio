@@ -11,6 +11,8 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 # Use bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha4'
+#Use Will_paginate
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -21,7 +23,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 #Use for images
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
+
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -35,7 +40,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 #Use editor wysiwyg
-gem 'ckeditor_rails'
+gem 'ckeditor'
+
+#Use devise for autentication
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -2,17 +2,29 @@
 
     <tbody>
       <% @notices.each do |notice| %>
+        <a href="/notices/<%= notice.id%>" id="titleNoneDeco">
+            <h2><%= notice.title %></h2>
+            <%= image_tag notice.image.url (:large) %>
+        </a>
+          <p><%= notice.body[0, 500].html_safe %><%= link_to '(Ver mas)', notice%></p>
+          <% if admin_signed_in? %>
+            <div class="alinCenter">
+              <%= link_to 'Editar', edit_notice_path(notice), :class => 'btn btn-success' %>
+              <%= link_to 'Destruir', notice, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+            </div>
+          <% end %>
         
-          <h2><%= notice.title %></h2>
-          <%= image_tag notice.image.url (:large) %>
-          <p><%= notice.body.html_safe %></p>
-          <td><%= link_to 'Show', notice %></td>
-          <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-          <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <hr>
+          <br>
         
-      <% end %>
+        <% end %>
 
   <br>
-<%= link_to 'New Notice', new_notice_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'Nueva Noticia', new_notice_path , :class => 'btn btn-primary'%>
+<% end %>
+<div class="alinCenter"> 
+  
+  <%= will_paginate @notices, :page_links => false %>
+</div>
 </div>

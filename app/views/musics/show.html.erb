@@ -1,25 +1,31 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
 	<div class="col-md-12 col-sm-12">
-		<% url = @music.url %>
-		<iframe  class="embed-responsive-item videoBlock" src="<%="http://www.youtube.com/embed/"+url.split("=").last%>" controls="true"></iframe>
+		<iframe  class="embed-responsive-item videoBlock" src="<%="http://www.youtube.com/embed/"+@music.url.split("watch?v=").last%>" controls="true"></iframe>
 	</div>
 </div>
 <div class="row" style=" margin-top: 25px;">
 	<div class="col-md-8">
 		<p>Tema: <strong><%= @music.name %></strong></p>
-		<p>Artista: <strong><%= @music.artist %></strong></p>
-		<p><strong>Points:</strong><%= @music.points %></p>
-
-		<%= link_to 'Edit', edit_music_path(@music) %> |
-		<%= link_to 'Back', musics_path %>
+		<p>Artista: <strong><%= @music.artist %></strong></p>		
 	</div>
 	<div class="col-md-4 imgVideoShow">
 		<%= image_tag @music.image.url(:medium) %>
 	</div>
+</div>
+<div class="marginTop">
+	<% if admin_signed_in? %>
+		<%= link_to 'Editar', edit_music_path(@music) , :class => 'btn btn-success'%>
+	<% end %>
+	<a href="/musics" class="btn btn-primary fa fa-arrow-left" > Atras</a>
+	<a href="/votes/<%= @music.vote.id %>/edit" class="fa fa-thumbs-o-up btn btn-primary pull-right"> Votar</a>
 
 </div>
+<%= render 'disqus' %>
+
+<script>
+	if('<%= notice %>')
+		alert('<%= notice %>');
+</script>
 
 
 

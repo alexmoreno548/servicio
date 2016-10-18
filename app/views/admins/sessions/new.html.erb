@@ -1,0 +1,26 @@
+<h2>Inicio Sesion Administracion</h2>
+<div class="col-md-6">
+  
+<div class="card">
+  <div class="margin">
+    
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Acceder", :class => 'btn btn-success marginTop ' %>
+      <%= link_to "Ovido el password?", new_password_path(resource_name), :class => 'btn btn-primary marginTop' %>
+    </div>
+  <% end %>
+
+  </div>
+</div>
+</div>
