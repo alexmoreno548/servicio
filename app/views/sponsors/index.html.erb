@@ -8,7 +8,7 @@
       <div class="card alinCenter cardSponsor">
     <% end %>
         <%= link_to sponsor do%>
-          <%= image_tag sponsor.image.url(:medium), :class => "card-img-top imgSponsor", :alt => "Card image cap" %>
+          <img src="<%= sponsor.image %>" class="card-img-top imgSponsor">
         <% end %>
         <div class="card-block">
           <h3 class="card-text"><%= sponsor.name %></h3>

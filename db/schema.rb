@@ -53,50 +53,38 @@ ActiveRecord::Schema.define(version: 20161016150847) do
     t.string   "artist"
     t.string   "url"
     t.integer  "points"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "vote_id"
+    t.string   "image"
     t.index ["vote_id"], name: "index_musics_on_vote_id", using: :btree
   end
 
   create_table "notices", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "programs", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "schedule"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "address"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.json     "photos"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
+    t.string   "photo"
   end
 
   create_table "votes", force: :cascade do |t|

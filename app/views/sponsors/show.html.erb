@@ -1,6 +1,6 @@
 <h1><%= @sponsor.name %></h1>
 <div class="alinCenter">
-	<%= image_tag @sponsor.image.url(:medium), :class => "" %>
+	<img src="<%= @sponsor.image %>">
 </div>
 <p><%= @sponsor.description.html_safe %></p>
 
@@ -8,9 +8,9 @@
 <p><%= @sponsor.address %></p>
 
 <div class="alinCenter">
-	<% @sponsor.photos_urls.each do |photo| %>
-		<%= image_tag photo %>
-		
+
+	<% @sponsor.photo.split(";").each do |photo| %>
+		<img src="<%= photo %>" class="imageSponsor">		
 	<% end %>
 </div>
 

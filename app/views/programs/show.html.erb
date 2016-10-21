@@ -4,7 +4,7 @@
 		<h3 class="scheduleProgramShow"><%= @program.schedule %></h3>		
 	</div>
 	<div class="col-md-4 imgVideoShow">
-		<%= image_tag @program.image.url(:medium), :class => "imgCardProgramShow" %>
+		<img src="<%= @program.image %>" class="imgCardProgramShow">
 	</div>
 </div>
 <p class="descriptionProgramShow">

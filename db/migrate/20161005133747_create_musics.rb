@@ -5,6 +5,7 @@ class CreateMusics < ActiveRecord::Migration[5.0]
       t.string :artist
       t.string :url
       t.integer :points
+      t.string :image
 
       t.timestamps
     end

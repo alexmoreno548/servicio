@@ -18,8 +18,8 @@
           </div>
           <div class="col-md-4">
             <%= link_to program do%>
-              <%= image_tag program.image.url(:medium), :class => "card-img-top imgCardProgram", :alt => "Card image cap" %>
-              <% end %>
+              <img src="<%= program.image %>" class="card-img-top imgCardProgram">
+            <% end %>
           </div>            
         </div>
       </div>

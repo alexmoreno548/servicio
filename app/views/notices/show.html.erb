@@ -1,5 +1,5 @@
 <h1><%= @notice.title %></h1>  
-	<%= image_tag @notice.image.url(:large) %>
+	<%= image_tag @notice.image, :class => 'image' %>
 <p><%= @notice.body.html_safe %></p>
 <div class="alinCenter">
 	<% if admin_signed_in? %>

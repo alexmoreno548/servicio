@@ -8,7 +8,7 @@
     <% end %>
       <div class="text-xs-center">
         <%= link_to music do%>
-        <%= image_tag music.image.url(:medium), :class => "card-img-top img-thumbnail", :alt => "Card image cap" %>
+        <img src="<%=music.image%>" class="card-img-top img-thumbnail">
         <% end %>
       </div>
       <div class="cardText">        

@@ -9,7 +9,7 @@
 		<p>Artista: <strong><%= @music.artist %></strong></p>		
 	</div>
 	<div class="col-md-4 imgVideoShow">
-		<%= image_tag @music.image.url(:medium) %>
+		<img src="<%=@music.image%>">
 	</div>
 </div>
 <div class="marginTop">

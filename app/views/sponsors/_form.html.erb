@@ -13,7 +13,7 @@
 
   <div >
     <p><strong>Logo:</strong></p>
-    <%= f.file_field :image, :class => 'form-control' %>
+    <%= f.text_field :image, :class => 'form-control' %>
   </div>
 
   <div class="marginTop">
@@ -33,8 +33,8 @@
 
 
   <div class="marginTop">
-    <p><strong>Fotos:</strong></p>
-    <%= f.file_field :photos, multiple: true %>
+    <p><strong>Fotos:</strong> Agregue los link's separador por "espacio"+";"+"espacio" ej: www.imagen.com/imagen/jpg ; www.imagen.com/imagen2.jpg notese los espacios antes y despues del ";"</p>
+    <%= f.text_field :photo, :class => "form-control" %>
   </div>
 
 
@@ -43,3 +43,4 @@
     <%= f.submit 'Guardar', :class => 'btn btn-primary'%>
   </div>
 <% end %>
+

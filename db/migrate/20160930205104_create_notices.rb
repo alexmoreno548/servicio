@@ -3,6 +3,7 @@ class CreateNotices < ActiveRecord::Migration[5.0]
     create_table :notices do |t|
       t.string :title
       t.text :body
+      t.text :image
 
       t.timestamps
     end

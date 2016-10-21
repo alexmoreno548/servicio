@@ -4,7 +4,7 @@
       <% @notices.each do |notice| %>
         <a href="/notices/<%= notice.id%>" id="titleNoneDeco">
             <h2><%= notice.title %></h2>
-            <%= image_tag notice.image.url (:large) %>
+            <img src="<%=notice.image%>" class="image"> 
         </a>
           <p><%= notice.body[0, 500].html_safe %><%= link_to '(Ver mas)', notice%></p>
           <% if admin_signed_in? %>
