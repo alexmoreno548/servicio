@@ -14,6 +14,9 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 #Use Will_paginate
 gem 'will_paginate', '~> 3.1.0'
 
+#use corrousel
+gem 'owlcarousel-rails'
+
 gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

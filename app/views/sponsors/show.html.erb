@@ -6,16 +6,40 @@
 
 <p><strong>Direccion:</strong></p>
 <p><%= @sponsor.address %></p>
-
-<div class="alinCenter">
-
-	<% @sponsor.photo.split(";").each do |photo| %>
-		<img src="<%= photo %>" class="imageSponsor">		
-	<% end %>
+<br>
+<div id="owl-demo" class="owl-carousel owl-theme">
+  <% @sponsor.photo.split(";").each do |photo| %>
+  	<div class="item alinCenter">
+      <img src="<%= photo %>" class="imageSponsor">
+  	</div>
+  <% end %>
 </div>
+  
+
 
 <% if admin_signed_in? %>
 	<%= link_to 'Editar', edit_sponsor_path(@sponsor), :class => 'btn btn-success' %>
 <% end %>
 <a href="/sponsors" class="btn btn-primary fa fa-arrow-left"> Atras</a>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});
+</script>

@@ -16,4 +16,5 @@
 //= require ckeditor/init
 //= require tether
 //= require bootstrap-sprockets
+//= require owl.carousel
 //= require_tree .
